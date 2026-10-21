@@ -1,0 +1,7 @@
+{
+  "project-env": {
+    "PROJECT_NAME": "empty-project",
+    "ENVIRONMENT": "development",
+    "DEBUG": "true"
+  }
+}

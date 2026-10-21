@@ -1,0 +1,88 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "task_id": "T-001",
+      "module": "Core Infrastructure",
+      "feature": "Project Scaffolding",
+      "task": "Scaffold Node.js/Express server with SQLite database initialization",
+      "description": "Create the foundational project skeleton: package.json with express, better-sqlite3, dotenv dependencies and start/dev scripts; src/server.js Express entry point serving static files from public/, exposing GET /api/health, and listening on PORT; src/db/db.js initializing a better-sqlite3 connection to DB_PATH and creating the todos table (id, text, completed, created_at) if it does not exist; .env.example documenting PORT and DB_PATH; .gitignore excluding node_modules, .env, and the sqlite db file. Establishes shared infrastructure for the Todo CRUD feature.",
+      "depends_on": [],
+      "acceptance_criteria": [
+        "npm install succeeds and installs express, better-sqlite3, dotenv",
+        "npm start launches the server without errors listening on PORT (default 3000)",
+        "GET /api/health returns HTTP 200 with a JSON status body",
+        "SQLite file at DB_PATH is created on startup with a todos table containing id, text, completed, created_at columns",
+        ".env.example documents PORT and DB_PATH with example values"
+      ],
+      "verification_commands": [],
+      "affected_files": [
+        "package.json",
+        "src/server.js",
+        "src/db/db.js",
+        ".env.example",
+        ".gitignore"
+      ],
+      "status": "completed",
+      "created_from": "spec_generation",
+      "ui_task_id": 2,
+      "files": [
+        "C:\\DARTS-development-environment\\sandbox\\ksanthosh\\Sample Project1\\.darts\\project_context\\task_2_todo_list.md"
+      ],
+      "created_at": "2026-09-18T08:11:54.716Z",
+      "updated_at": "2026-09-18T08:18:49.491Z",
+      "completed_at": "2026-09-18T08:18:49.491Z"
+    },
+    {
+      "id": 2,
+      "task_id": "T-002",
+      "module": "Todo Management",
+      "feature": "Todo CRUD",
+      "task": "Implement full to-do tracking — model, service, API endpoints, and UI",
+      "description": "Build the complete vertical slice for to-do management: src/models/todoModel.js (getAll, create, toggleComplete, remove against the todos table); src/services/todoService.js wrapping the model with validation; src/routes/todoRoutes.js exposing GET/POST /api/todos and PATCH/DELETE /api/todos/:id; modify src/server.js to mount the router at /api/todos; public/index.html, public/style.css, public/app.js implementing a vanilla JS frontend that lists, adds, toggles, and deletes todos via fetch calls without full page reloads. Optionally update README.md with usage instructions.",
+      "depends_on": [
+        "T-001"
+      ],
+      "acceptance_criteria": [
+        "POST /api/todos with {text} returns 201 with created todo object and persists it in SQLite",
+        "POST /api/todos with empty/missing text returns 400",
+        "GET /api/todos returns 200 with an array of persisted todo items",
+        "PATCH /api/todos/:id toggles completed and returns 200 with updated object; 404 for non-existent id",
+        "DELETE /api/todos/:id removes the row and returns 204; 404 for non-existent id",
+        "index.html loads and displays existing todos on page load via fetch",
+        "Adding a todo via the UI form updates the list without a full page reload",
+        "Toggling a todo's checkbox updates completed state visually (e.g., strikethrough) via PATCH",
+        "Deleting a todo via the UI removes it from the list via DELETE"
+      ],
+      "verification_commands": [],
+      "affected_files": [
+        "src/models/todoModel.js",
+        "src/services/todoService.js",
+        "src/routes/todoRoutes.js",
+        "public/index.html",
+        "public/style.css",
+        "public/app.js",
+        "src/server.js",
+        "README.md"
+      ],
+      "status": "completed",
+      "created_from": "spec_generation",
+      "ui_task_id": 2,
+      "files": [
+        "C:\\DARTS-development-environment\\sandbox\\ksanthosh\\Sample Project1\\.darts\\project_context\\task_2_todo_list.md"
+      ],
+      "created_at": "2026-09-18T08:11:54.716Z",
+      "updated_at": "2026-09-18T08:18:49.515Z",
+      "completed_at": "2026-09-18T08:18:49.515Z"
+    }
+  ],
+  "metadata": {
+    "source": "spec_generation",
+    "target_framework": "Empty Project Default",
+    "gap_summary": "",
+    "total_tasks": 2,
+    "created_at": "2026-09-18T08:11:54.715Z",
+    "last_updated": "2026-09-18T08:18:49.515Z"
+  },
+  "last_updated": "2026-09-18T08:18:49.515Z"
+}

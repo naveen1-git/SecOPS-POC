@@ -1,0 +1,142 @@
+{
+  "task_id": 2,
+  "task_name": "Sample Project1",
+  "execution_path": "full_pipeline",
+  "complexity_tier": "medium",
+  "requirement_text": "Create a simple to do application",
+  "generated_at": "2026-09-18T08:18:58.571Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "The system shall provide a backend server to support the to-do application.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "The system shall persist todo items in a SQLite database.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "Users shall be able to create new todo items via the application.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-004",
+      "text": "Users shall be able to view the list of existing todo items.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-005",
+      "text": "Users shall be able to toggle the completed status of a todo item.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-006",
+      "text": "Users shall be able to delete a todo item.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-007",
+      "text": "The system shall provide a frontend UI that allows interacting with todos without full page reloads.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-008",
+      "text": "The system shall validate that todo text is not empty when creating a todo.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-009",
+      "text": "The system shall return appropriate error responses (e.g., 404) for operations on non-existent todos.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-010",
+      "text": "The system shall expose a health check endpoint to verify server status.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Scaffold Node.js/Express server with SQLite database initialization",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002",
+        "R-010"
+      ],
+      "files_written": [],
+      "module": "Core Infrastructure",
+      "feature": "Project Scaffolding",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Implement full to-do tracking — model, service, API endpoints, and UI",
+      "status": "completed",
+      "req_refs": [
+        "R-003",
+        "R-004",
+        "R-005",
+        "R-006",
+        "R-007",
+        "R-008",
+        "R-009"
+      ],
+      "files_written": [],
+      "module": "Todo Management",
+      "feature": "Todo CRUD",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 10,
+    "covered": 10,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}
