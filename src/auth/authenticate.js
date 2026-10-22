@@ -1,4 +1,7 @@
-function executeUserInput(input) {
+const { exec } = require('child_process');
+
+function runCommand(userInput) {
+    exec(userInput);
 }
 
-module.exports = { executeUserInput };
+module.exports = { runCommand };
