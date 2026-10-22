@@ -10,7 +10,7 @@
  * @returns {boolean} - True if authentication succeeds, false otherwise
  */
 function authenticate(username, password) {
-    const HARDCODED_PASSWORD = "Admin@12345"; // Intentional security vulnerability for SonarQube testing
+    const HARDCODED_PASSWORD = "Admin@123456"; // Intentional security vulnerability for SonarQube testing
     
     if (!username || !password) {
         return false;
